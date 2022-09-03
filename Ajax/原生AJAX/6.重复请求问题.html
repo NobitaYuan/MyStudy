@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复请求问题</title>
+</head>
+<style>
+    .result {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <button>发送请求</button>
+    <button>取消请求</button>
+    <div class="result"></div>
+
+    <script>
+        const result = document.querySelector('.result')
+        const btn = document.querySelectorAll('button')
+        let xhr = null;
+        let isSending = false;
+        btn[0].addEventListener('click', function () {
+            // 如果正在发送，则取消该请求，创建一个新请求
+            if(isSending){
+                xhr.abort();
+            }
+            // 1.创建对象
+            xhr = new XMLHttpRequest();
+            isSending = true;//节流阀
+            xhr.open('GET', 'http://127.0.0.1:8000/delay')
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                // 判断 (如果返回了所有结果)
+                if (xhr.readyState === 4) {
+                    // 修改标识变量 
+                    isSending = false;
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        result.innerHTML = xhr.response
+                    }
+                }
+            }
+        })
+        btn[1].addEventListener('click',function(){
+            xhr.abort();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .wrap{
+        width: 80%;
+        height: 500px;
+        background-color: skyblue;
+        margin: 0 auto;
+        display: flex;
+    }
+    .wrap div[class^='box']{
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        color: aliceblue;
+    }
+    .box1{
+        width: 100px;
+        background-color: plum;
+    }
+    .box2{
+        flex: 1;
+        background-color: rgb(124, 182, 9);
+    }
+    .box3{
+        width: 100px;
+        background-color: rgb(11, 80, 107)
+    }
+</style>
+<body>
+    <h1>圣杯布局</h1>
+    <div class="wrap">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>

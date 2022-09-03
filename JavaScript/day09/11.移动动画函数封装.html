@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+</style>
+
+<body>
+    <button class="to500">to500</button>
+    <button class="to800">to800</button>
+    <div></div>
+    <script>
+        var div = document.querySelector('div')
+        var to500 = document.querySelector('.to500')
+        var to800 = document.querySelector('.to800')
+        to500.addEventListener('click', function () {
+            animate(div, 500, function () {
+                alert('移动完成')
+            })
+        })
+        to800.addEventListener('click', function () {
+            animate(div, 800, function () { })
+        })
+
+        function animate(obj, target, callback) {
+            //清除之前的定时器，防止触发多个定时器
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                // var step = Math.ceil((target - obj.offsetLeft) / 10)
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer)
+                    if (callback) {
+                        callback()
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px'
+                console.log(obj.offsetLeft);
+
+            }, 15)
+        }
+    </script>
+</body>
+
+</html>

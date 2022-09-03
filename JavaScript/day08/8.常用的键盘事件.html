@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        position: relative;
+    }
+    p{
+        width: 800px;
+        height: 300px;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .3);
+    }
+    img{
+        position: absolute;
+        z-index: 1;
+    }
+</style>
+<body>
+    <h2>请按任意键：</h2>
+    <p></p>
+    <img src="./images/angel.gif" alt="">
+    <h2>您可以使用方向键移动小天使</h2>
+
+    <script>
+        //小天使初始位置
+        var x = 100;
+        var y = 400;
+        //小天使移动步长
+        var step = 50;
+        var angel = document.querySelector('img')
+        angel.style.left = x +'px'
+        angel.style.top = y +'px'
+        // 1. keydown 某个按键按下时
+        // 2. keypress 某个按键被按下时（不识别功能键，例如ctrl,shift,箭头等）
+        // 3. keyup 某个按键弹起时
+        var p = document.querySelector('p')
+
+        document.addEventListener('keydown',function(e){
+            // console.log(e);
+            p.innerHTML += e.key+' '
+            
+            if(e.key == 'ArrowUp' ){
+                y -= step;
+                angel.style.top = y +'px'
+                console.log('向上移动了'+step+'px , 当前坐标('+angel.style.left+','+angel.style.top+')');
+            }else if(e.key == 'ArrowRight' ){
+                x += step;
+                angel.style.left = x +'px'
+                console.log('向右移动了'+step+'px , 当前坐标('+angel.style.left+','+angel.style.top+')');
+            }else if(e.key == 'ArrowDown' ){
+                y += step;
+                angel.style.top = y +'px'
+                console.log('向下移动了'+step+'px , 当前坐标('+angel.style.left+','+angel.style.top+')');
+            }else if(e.key == 'ArrowLeft' ){
+                x -= step;
+                angel.style.left = x +'px'
+                console.log('向左移动了'+step+'px , 当前坐标('+angel.style.left+','+angel.style.top+')');
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top {
+        height: 50px;
+        background-color: gray;
+    }
+
+    .banner {
+        width: 980px;
+        height: 120px;
+        margin: 10px auto;
+        background-color: skyblue;
+    }
+
+    .box {
+        width: 980px;
+        margin: 10px auto;
+        /* background-color: rgb(39, 131, 36); */
+    }
+
+    .box div {
+        float: left;
+        ;
+        width: 237px;
+        height: 300px;
+        background-color: pink;
+        margin-right: 10px;
+    }
+
+    .box div:nth-child(4) {
+        margin-right: 0px;
+    }
+
+    .footer {
+        height: 400px;
+        background-color: brown;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        content: "";
+        display: table;
+    }
+    .clearfix:after{
+        clear: both;
+    }
+    
+    .clearfix {/* 兼容IE6,7 */
+        *zoom: 1;
+    }
+</style>
+
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="box clearfix">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

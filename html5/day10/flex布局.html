@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局</title>
+</head>
+<style>
+    div{
+        width: 700px;
+        height: 700px;
+        background-color: skyblue;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* align-items: center; */
+        align-content: space-between;
+    }
+    div span{
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        /* border: 3px solid whitesmoke; */
+        margin: 5px;
+    }
+
+</style>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+    </div>
+</body>
+</html>

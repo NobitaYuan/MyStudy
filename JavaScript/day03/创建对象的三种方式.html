@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //一、字面量创建对象
+    var keke = {
+        name: 'keke',
+        age: '3',
+        wow: function () {
+            console.log('bark~');
+        }
+    }
+    //keke.wow();
+
+    //二、利用new object创建对象
+    // 创建了一个空的对象obj.uname =‘张三疯;
+    // var obj = new object(); 
+    // obj.age = 18;
+    // obj.sex = '男';
+    // obj.sayHi = function () {
+    //     console.log('hi~');
+    // }
+    //(1）我们是利用等号 = 赋值的方法添加对象的属性和方法
+    //(2）每个属性和方法之间用分号隔开
+
+    //三、利用构造函数创建对象
+
+    // new关键字执行过程:
+    // 1. new构造函数可以在内存中创建了一个空的对象
+    // 2. this就会指向刚才创建的空对象
+    // 3．执行构造函数里面的代码给这个空对象添加属性和方法
+    // 4．返回这个对象
+
+    //1.构造函数首字母要大写
+    function Star(uname, age, sex) {
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+        this.Sing = function (music) {
+            console.log(this.uname + '唱了一首' + music)
+        }
+    }
+    var ldh = new Star('刘德华', 18, '男')
+    ldh.Sing('冰雨');
+
+    //练习
+    function Hero(name, type, blood, attack) {
+        this.name = name;
+        this.type = type;
+        this.blood = blood;
+        this.attack = attack;
+    }
+    var hy = new Hero('后羿', '射手', '500血量', '远程')
+    var lp = new Hero('廉颇', '战士', '1500血量', '近战')
+    console.log(hy.name, hy.type, hy.blood, hy.attack) 
+</script>
+
+<body>
+
+</body>
+
+</html>

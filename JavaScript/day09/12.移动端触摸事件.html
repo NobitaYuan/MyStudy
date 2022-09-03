@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        border: 5px solid #fff;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        var box = document.querySelector('.box')
+        box.addEventListener('touchstart', function (e) {
+            console.log('触发触摸事件')
+            console.log(e.targetTouches[0]);
+            // touches 正在触摸屏幕的所有手指的列表
+            // targetTouches正在触摸当前DOM元素的手指列表l/如果侦听的是一个DOM元素，他们两个是一样的
+            // changedTouches手指状态发生了改变的列表从无到有或者从有到无
+
+        })
+        box.addEventListener('touchmove', function (e) {
+            console.log('触发触摸移动事件')
+        })
+        box.addEventListener('touchend', function (e) {
+            console.log('触发触摸离开事件')
+        })
+    </script>
+</body>
+
+</html>

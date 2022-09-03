@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap-icons.css">
+</head>
+<style>
+    .box{
+        width: 400px;
+        border-bottom: 1px solid #ccc;
+        margin: 100px auto;
+    }
+    .box input{
+        width: 370px;
+        height: 30px;
+        outline: none;
+        border: none;
+    }
+    .box::after{
+        font-family: "bootstrap-icons" !important;
+        content: "\f33e";        
+    }
+</style>
+<body>
+    <div class="box">
+        <input type="password" name="" id="">
+    </div>
+
+    <script>
+        var box = document.querySelector('.box')
+        var input = document.querySelector('input')
+        var icon = window.getComputedStyle(box,"::after")
+        console.log(icon.content);
+        icon.onclick = function (){
+            this.content = '\F33F'
+        }
+    </script>
+</body>
+</html>

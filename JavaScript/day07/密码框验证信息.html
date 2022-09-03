@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap-icons.css">
+</head>
+<style>
+.ipt{
+    outline: none;
+}
+.message{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    background:url(./images/ts.png) no-repeat;
+    background-size: 16px 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    text-indent: 20px;
+}
+.wrong{
+    color: red;
+    background:url(./images/no.png) no-repeat;
+    background-size: 16px 16px;
+}
+.ri{
+    color: green;
+    background: url(./images/yes.png) no-repeat;
+    background-size: 16px 16px;
+}
+</style>
+<body>
+    <div class="box">
+        <input type="text" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message')
+        ipt.onblur = function(){
+            if(this.value.length <6 || this.value.length>16){
+                message.innerHTML = '格式错误,请输入6~16位密码!'
+                message.className = 'message wrong'            
+            }else{
+                message.innerHTML = '格式正确!' 
+                message.className = 'message ri'
+            }
+        }
+    </script>
+</body>
+</html>

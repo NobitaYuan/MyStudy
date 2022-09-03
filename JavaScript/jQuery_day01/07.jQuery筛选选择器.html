@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+    .father{
+        width: 150px;
+        height: 150px;
+        background-color: rgb(16, 44, 54);
+    }
+    .son{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(212, 77, 36);
+    }
+</style>
+
+<body>
+
+    <div class="gfather">gfather
+        <div class="father">father
+            <div class="son">son</div>
+        </div>
+    </div>
+    
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ol>
+
+    <script>
+        // 1.筛选选择器，子选择器
+        $(function(){
+            $('ul li:first').css('color','red')
+            $('ul li:eq(2)').css('color','red')
+            $('ol li:odd').css('color','skyblue')
+            $('ol li:even').css('color','red')
+        
+        // 2. 亲儿子选择器：children()
+            console.log($('son').parent());
+            $('.gfather').children('.father').css('color','red');
+        // 3.后代选择器
+            $('.gfather').find('.son').css('color','pink')
+        })
+
+    </script>
+
+</body>
+
+</html>

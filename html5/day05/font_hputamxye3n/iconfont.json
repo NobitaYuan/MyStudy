@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "30175717",
+      "name": "ArrowRight",
+      "font_class": "ArrowRight",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "30175718",
+      "name": "Arrow-down",
+      "font_class": "Arrow-down",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "30175719",
+      "name": "Calendar",
+      "font_class": "Calendar",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "30175720",
+      "name": "Check",
+      "font_class": "Check",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "30175721",
+      "name": "Arrow-up",
+      "font_class": "Arrow-up",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "30175722",
+      "name": "Chevron-Left 2",
+      "font_class": "a-Chevron-Left2",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "30175723",
+      "name": "Chevron-down",
+      "font_class": "Chevron-down",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "30175724",
+      "name": "Chevron-up",
+      "font_class": "Chevron-up",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    }
+  ]
+}

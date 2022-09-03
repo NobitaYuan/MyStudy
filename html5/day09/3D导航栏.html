@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D导航栏</title>
+</head>
+<style>
+    ul li{
+        position: relative;
+        list-style: none;
+        float: left;    
+        perspective: 500px;
+    }
+    .box{
+        width: 200px;
+        height: 100px; 
+        transition: .5s;
+        margin: 10px;
+        transform-style: preserve-3d;    
+        transform-origin:100px 50px -50px;
+    }
+    .box div{
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 30px;
+        font-weight: 600;
+        font-family:'FangSong';
+        cursor: pointer;
+    }
+    .box .front{
+        background-color: skyblue;
+    }
+    .box .bottom{
+        background-color: rgb(51, 138, 63);
+        transform: translateY(50px) translateZ(-50px) rotateX(-90deg) ;
+        color: aliceblue;
+    }
+    ul li:hover .box{
+        transform: rotateX(90deg);
+    }
+</style>
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front">道阻且长</div>
+                <div class="bottom">行则将至</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">道阻且长</div>
+                <div class="bottom">行则将至</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">道阻且长</div>
+                <div class="bottom">行则将至</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">道阻且长</div>
+                <div class="bottom">行则将至</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">道阻且长</div>
+                <div class="bottom">行则将至</div>
+            </div>
+        </li>
+       
+        
+    </ul>
+</body>
+</html>

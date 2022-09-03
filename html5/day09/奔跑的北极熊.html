@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奔跑的北极熊</title>
+</head>
+<style>
+    h1 {
+        height: 100px;
+        line-height: 150px;
+        text-align: center;
+    }
+
+    .wbear {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        bottom: 0px;
+        background-image: url(./img/bear.png);
+        /* 第一个动画为北极熊自身图片滚动（分为8步），第二个动画为北极熊整体的移动 */
+        animation: bear .8s steps(8) infinite, bearmove 15s forwards;
+    }
+
+    @keyframes bear {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: -1600px 0;
+        }
+    }
+
+    @keyframes bearmove {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .bg1 {
+        position: relative;
+        height: 400px;
+        background-image: url(./img/bg2.png);
+        animation: bgmove1 30s linear forwards;
+    }
+
+    .bg2 {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        left: 0px;
+        bottom: 0px;
+        background-image: url(./img/bg1.png);
+        animation: bgmove2 30s linear forwards;
+    }
+
+    @keyframes bgmove1 {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: -400px 0;
+        }
+    }
+
+    @keyframes bgmove2 {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: -1600px 0;
+        }
+    }
+</style>
+
+<body>
+    <h1>CSS3动画——奔跑的北极熊</h1>
+
+    <div class="bg1">
+        <div class="bg2">
+            <div class="wbear"></div>
+        </div>
+    </div>
+</body>
+
+</html>

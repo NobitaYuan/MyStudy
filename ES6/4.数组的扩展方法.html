@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // from() of()
+        //1. from() 将伪数组转换成真正的数组
+        function add(){
+            console.log(arguments);
+            // es5转换方法
+            // let arr = [].slice.call(arguments)
+
+            // es6 写法
+            let arr = Array.from(arguments)
+            console.log(arr);
+
+            // 或者使用扩展运算符
+            console.log([...arguments]);
+        }
+        add(1,2,3)
+
+        // 2. of()将一组值转换为数组
+        console.log(Array.of(3,1,5,6,[1,23,40],{name:'hello'}));
+
+        // 3. copyWithin() 将数组内部指定位置的元素复制到其他位置,返回当前数组
+        let arr2 = [1,23,5,6,22].copyWithin(0,3);
+        console.log(arr2);
+
+        // 4.find() findIndex()
+        // 例如，返回小于0的第一个数组成员
+        let findNum = [1,2,3,4,-123,12,333].find((n)=>{
+            return n<0
+        })
+        console.log(findNum);
+
+        // entries() keys() values() 返回一个遍历器 可以使用for...of进行遍历
+        ['a','b']
+
+
+        // includes()返回一个Boolean值表示数组是否包含某个值
+        console.log([1,2,3].includes(2));
+    </script>
+</body>
+</html>

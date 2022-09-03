@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // generator函数 可以通过yield关键字，将函数挂起，为了改变执行流提供了可能 ，
+        // 和普通函数的区别
+        // 1.function 后面 函数名之前有个*
+        // 2.只能在函数内部使用yield表达式，让函数挂起
+        // 3.使用场景，为不具备Interator接口的对象提供给了遍历操作
+        // 部署ajax操作，让异步代码同步化
+        function* func(params){
+            console.log('one');
+            yield 2;
+            console.log('two');
+            yield 3;
+        }
+        // 返回一个遍历器对象
+        let o = func()
+        console.log(o.next());
+        // console.log(o.next());
+        // console.log(o.next());
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 没有参数
+    var date = new Date()
+    console.log(date)
+    // 
+    var date1 = new Date(2019,10,1)
+    console.log(date1)
+    // 
+    var date2 = new Date('2019-10-1')
+    console.log(date2)
+
+    var date3 = new Date()
+    console.log(date3.getFullYear())
+    console.log(date3.getMonth()+1)
+    console.log(date3.getDate())
+    console.log(date3.getDay())
+    var zhou = ['日','一','二','三','四','五','六']
+    var year = date3.getFullYear();
+    var month = date3.getMonth()+1;
+    var dates = date3.getDate();
+    var day = date3.getDay();
+    
+    // var year = date3.getDay();
+    console.log('今天是:'+year+'年'+month+'月'+dates+'日,星期'+zhou[day] )
+</script>
+
+<body>
+
+</body>
+
+</html>

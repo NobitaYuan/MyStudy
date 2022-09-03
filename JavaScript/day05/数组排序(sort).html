@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var arr = [12, 64, 7, 8, 33, 4, 6]
+    console.log(arr);
+
+    arr.unshift(1)//在第一位添加一个
+    console.log(arr);
+
+    arr.push(99)//在最后一位添加一个
+    console.log(arr);
+
+    console.log(arr.shift());//删除第一个
+
+    console.log(arr.pop());//删除最后一个
+
+    console.log(arr);
+
+    console.log('排序：');
+    arr.sort(function(a,b){
+        return a - b ; //升序排列
+        //return b - a ; //降序排列
+    })
+    console.log(arr);
+</script>
+<body>
+    
+</body>
+</html>

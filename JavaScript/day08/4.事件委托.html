@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>一号</li>
+        <li>二号</li>
+        <li>三号</li>
+        <li>四号</li>
+        <li>五号</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul')
+        ul.addEventListener('click',function(e){
+            //e.stopPropagation();//取消冒泡
+            console.log('ul弹窗')
+            console.log(e.target);
+            e.target.style.backgroundColor = 'pink'
+        })
+    </script>
+
+</body>
+</html>

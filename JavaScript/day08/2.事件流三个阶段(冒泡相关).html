@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father{
+        position: relative;
+        width: 500px;
+        height: 400px;
+        margin: 20px auto;
+        background-color: skyblue;
+    }
+    .son{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+        line-height: 200px;
+        top: 50%;
+        left: 50%;
+        background-color: pink;
+        transform: translate(-50%,-50%);
+    }
+</style>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+    <script>
+        //如果第三个参数是true，则是捕获阶段
+        //如果第三个参数是false，或者不写，则是冒泡阶段
+        var son = document.querySelector('.son')
+        son.addEventListener('click', function(e){
+            alert('son')
+            e.stopPropagation();//取消冒泡
+        }, false)
+
+        var father = document.querySelector('.father')
+        father.addEventListener('click', function(){
+            alert('father')
+        }, false)
+
+        var body = document.body
+        body.addEventListener('click',function(e){
+            alert('body')
+        },false)
+    </script>
+</body>
+</html>

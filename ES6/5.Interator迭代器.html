@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Iterator 是一种新的遍历机制
+        // 1.是一个接口，可以快捷的访问数据
+        // 2.通过[Symbol.iterator]()生成迭代器
+        // 3.使用next()遍历
+
+        const item = ['one','two','three'];
+
+        const itr = item[Symbol.iterator]();
+        console.log(itr.next());
+        console.log(itr.next());
+        console.log(itr.next());
+        console.log(itr.next());
+
+    </script>
+</body>
+</html>

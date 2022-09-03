@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //数组去重
+    //算法：遍历旧数组，拿着旧数组里的元素添加进新数组，如果该元素已存在，则不添加
+    var arr1 = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+
+    console.log(quChong(arr1));
+
+    //数组去重函数
+    function quChong(arr) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (newArr.indexOf(arr[i]) === -1) {
+                newArr.push(arr[i])
+            }
+        }
+        return newArr;
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

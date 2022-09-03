@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+</style>
+
+<body>
+
+    <div></div>
+    <span></span>
+    <script>
+        // 1.
+        var domEl = document.querySelector('div')
+        var domEl2 = document.querySelector('span')
+
+        // 2. 
+        console.log($(domEl));
+
+        // 3.jquery对象转换为dom对象
+        // $('div')[0] 或者 $('div').get(0)
+
+        console.log($('div')[0]);
+    </script>
+
+</body>
+
+</html>

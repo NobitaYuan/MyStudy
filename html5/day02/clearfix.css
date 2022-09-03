@@ -1,0 +1,15 @@
+/* 父级添加双伪标签：清除浮动 */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    /* 兼容IE6,7 */
+    *zoom: 1;
+}

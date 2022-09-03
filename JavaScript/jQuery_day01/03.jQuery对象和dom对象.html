@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+</style>
+
+<body>
+
+    <div></div>
+    <span></span>
+    <script>
+        // 1. 原生js获取的对象就是dom对象
+        var domEl = document.querySelector('div')
+        var domEl2 = document.querySelector('span')
+
+        // 2. jQuery获取的对象就是jQuery对象
+        $('div');
+        console.dir(domEl)
+        console.dir($('div'))
+
+        // 3.两种对象的属性和方法不能共用
+    </script>
+    
+</body>
+
+</html>

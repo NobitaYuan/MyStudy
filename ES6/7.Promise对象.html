@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Promise 承诺
+        // 相当于一个容器，保存着未来才会结束的事件（异步操作）的一个结果
+        // 各种异步操作都可以用同样的方法进行处理
+
+        // 特点
+        // 1.对象的状态不受外界影响 
+        // 异步操作三个状态：Pending(待定) Resolved/Fullfilled(兑现) Rejected(拒绝)
+        // 2.一旦状态改变，就不会再变，任何时候都可以得到这个结果
+
+        // 封装一个Promise
+        function returnPro(codePrams,ms) {
+            // 返回一个Promise对象
+            return new Promise(function (Resolved, Rejected) {
+                // 模拟执行异步操作
+                let res = {
+                    code: codePrams,
+                    data: {
+                        name: '学红阁',
+                        text:'传承红色精神！'
+                    }
+                }
+                setTimeout(() => {
+                    if (res.code === 200) {
+                        // 成功则执行
+                        Resolved(res.data);
+                    } else {
+                        // 失败则执行
+                        Rejected('失败！错误代码为：'+res.code)
+                    }
+                }, ms);
+            })
+        }
+
+        let pro = returnPro(200,1000)//传参
+
+        console.log('一个Promise对象:',pro);
+
+        pro.then((res) => {// 成功则执行
+            console.log(res);
+        }).catch((err)=>{// 失败则执行
+            console.log(err);
+        })
+
+
+        // function timeOut(ms) {
+        //     return new Promise(function (Resolved, Rejected) {
+        //         setTimeout(() => {
+        //             Resolved('success!');
+        //         }, ms);
+        //     })
+        // }
+
+        // let timePro = timeOut(2000)
+
+        // timePro.then((val) => {
+        //     console.log(val);
+        //     // return timePro
+        // })
+
+
+        // 使用Promise 封装 一个ajax
+
+    </script>
+</body>
+
+</html>
